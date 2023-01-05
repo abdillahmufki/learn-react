@@ -2,128 +2,176 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CDN REACT -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <!-- CDN BOOTStrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <title>Component</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CDN REACT -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- CDN BOOTStrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <title>Component</title>
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
 
-        <div id="app"></div>
-        <div class="row">
-            <div class="col-6 p-5">
-            </div>
-        </div>
+    <div id="app"></div>
+    <div class="row">
+      <div class="col-6 p-5">
+      </div>
     </div>
+  </div>
 
-    <script type="text/babel">
-        function Button() {
-        return <button className="btn btn-danger">Click Me This JSX</button>;
-      }
-
-      class ButtonJsx extends React.Component {
-        render() {
-            return <button className="btn btn-warning">{this.props.text}</button>
-        }
-    
+  <script type="text/babel">
+    function Button() {
+      return <button className="btn btn-danger">Click Me This JSX</button>;
     }
-    
 
-      /* Menggunakan sintaks Biasa */
-    //   Make component using class
-      class Cards extends React.Component {
-        render() {
-          const link = React.createElement(
-            "a",
-            { href: "#", class: "btn btn-primary" },
-            "Link"
-          );
-          const cardText = React.createElement(
-            "p",
-            { class: "card-text" },
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum minus incidunt magni excepturi hic itaque libero voluptates quos? At"
-          );
-          const cardTitle = React.createElement(
-            "h5",
-            { class: "card-title" },
-            "React Test"
-          );
-          const cardBody = React.createElement(
-            "div",
-            { class: "card-body" },
-            cardTitle,
-            cardText,
-            link
-          );
-          const cards = React.createElement("div", { class: "card" }, cardBody);
-          return cards;
-        }
+    class ButtonJsx extends React.Component {
+      render() {
+        return <button className="btn btn-warning">{this.props.text}</button>
       }
 
-      /* Menggunakan JSX */
-      class CardsJsx extends React.Component {
-        constructor() {
-          super();
-          this.state = {
-            Judul: "Ini cerita tentang State",
-            Subtitle: 'Ini adalah subtitle cards',
-        }
-        }
-        render() {
-          const card = (
-            <div className="card mt-5 mb-5">
-              <div className="card-body">
-                <h5>{this.state.Judul}</h5>
-                <p>{this.state.Subtitle}
-                </p>
-                <button className="btn btn-primary mx-2">Click Me JSX</button>
-                <ButtonJsx text="This Props" />
-                <ButtonJsx text="Orange Button" />
+    }
+
+    class Navbar extends React.Component {
+      render() {
+
+        return (
+          <nav clasName="navbar navbar-expand-lg bg-body-tertiary">
+            <div clasName="container-fluid">
+              <a clasName="navbar-brand" href="#">Navbar</a>
+              <button clasName="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span clasName="navbar-toggler-icon"></span>
+              </button>
+              <div clasName="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul clasName="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li clasName="nav-item">
+                    <a clasName="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li clasName="nav-item">
+                    <a clasName="nav-link" href="#">Link</a>
+                  </li>
+                  <li clasName="nav-item dropdown">
+                    <a clasName="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul clasName="dropdown-menu">
+                      <li><a clasName="dropdown-item" href="#">Action</a></li>
+                      <li><a clasName="dropdown-item" href="#">Another action</a></li>
+                      <li></li>
+                      <li><a clasName="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li clasName="nav-item">
+                    <a clasName="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form clasName="d-flex" role="search">
+                  <button clasName="btn btn-outline-success" type="submit">Search</button>
+                </form>
               </div>
             </div>
-          );
-          return card;
+          </nav>
+        )
+      }
+    }
+
+
+    /* Menggunakan sintaks Biasa */
+    //   Make component using class
+    class Cards extends React.Component {
+      render() {
+        const link = React.createElement(
+          "a",
+          { href: "#", class: "btn btn-primary" },
+          "Link"
+        );
+        const cardText = React.createElement(
+          "p",
+          { class: "card-text" },
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum minus incidunt magni excepturi hic itaque libero voluptates quos? At"
+        );
+        const cardTitle = React.createElement(
+          "h5",
+          { class: "card-title" },
+          "React Test"
+        );
+        const cardBody = React.createElement(
+          "div",
+          { class: "card-body" },
+          cardTitle,
+          cardText,
+          link
+        );
+        const cards = React.createElement("div", { class: "card" }, cardBody);
+        return cards;
+      }
+    }
+
+    /* Menggunakan JSX */
+    class CardsJsx extends React.Component {
+      constructor() {
+        super();
+        this.state = {
+          Judul: "Ini cerita tentang State",
+          Subtitle: 'Ini adalah subtitle cards',
         }
       }
 
-      const CardFunction = () => {
-        return (
-            <div className="card" style={{ width: "20rem" }}>
-                <navbar/>
+      ubahJudul = () => {
+        this.setState({
+          Judul: "Aku Berubah"
+        })
+      }
+      render() {
+        const card = (
+          <div className="card mt-5 mb-5">
             <div className="card-body">
-              <h5>React JS</h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum
-                minus incidunt magni excepturi hic itaque libero voluptates
-                quos? At, harum.
+              <h5>{this.state.Judul}</h5>
+              <p>{this.state.Subtitle}
               </p>
-              <ButtonArrow text="props" />
-              <a href="" className="btn btn-primary mx-2">
-                Menggunakan JSX
-              </a>
+              <button className="btn btn-primary mx-2">Click Me JSX</button>
+              <ButtonJsx text="This Props" />
             </div>
           </div>
         );
-      };
+        return card;
+      }
+    }
 
-      
+    const CardFunction = () => {
+      const [state, setState] = React.useState('Judul Card Menggunakan React HOOK')
+      return (
+        <div className="card" style={{ width: "20rem" }}>
+          <navbar />
+          <div className="card-body">
+            <h5>{state}</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum
+              minus incidunt magni excepturi hic itaque libero voluptates
+              quos? At, harum.
+            </p>
+            <a href="" className="btn btn-primary mx-2">
+              Menggunakan JSX
+            </a>
+          </div>
+        </div>
+      );
+    };
 
-      // Render component
-      ReactDOM.render(
-      <CardsJsx />, document.getElementById("app"));
-    </script>
-    <!-- CDN JS BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+
+
+    // Render component
+    ReactDOM.render(
+      <CardFunction />, document.getElementById("app"));
+  </script>
+  <!-- CDN JS BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
 </body>
 
