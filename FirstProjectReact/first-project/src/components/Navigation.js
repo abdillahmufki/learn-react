@@ -7,9 +7,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function Navigation() {
   return (
-    <Navbar className="p-4" bg="dark" variant="dark" expand="lg">
+    <Navbar className="p-4" bg="transparent" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#" className="fw-bold">
+          Coding With Me
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
